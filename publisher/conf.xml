@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mqtt>
+    <!-- broker -->
+    <broker>
+        <host>127.0.0.1</host>
+        <port>1883</port>
+        <mqtt_keep_alive>60</mqtt_keep_alive>
+        <topic>transmission/001</topic>
+    </broker>
+
+    <publisher></publisher>
+
+    <subscriber>
+        <!-- DBにコミットする間隔(秒) -->
+        <commit>150</commit>
+    </subscriber>
+
+    <!-- application -->
+    <schema>
+        <appid>A49A4F1D8AE7429B8207F5C567A9DC81</appid>
+        <table>C863DE52123A48729CE09D6DA414577C</table>
+        <columns>
+            <column>001_shorttext</column>
+        </columns>
+    </schema>
+
+    <!-- DB  -->
+    <database type="PostgreSQL">
+		<host>localhost</host>
+		<db_port>5432</db_port>
+		<db_name>your_db_name</db_name>
+		<user>postgres</user>
+		<password>root</password>
+        <!-- 例外処理try回数上限 -->
+        <connection_retry>10</connection_retry>
+	</database>
+
+</mqtt>
